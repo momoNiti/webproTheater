@@ -12,102 +12,110 @@
 </head>
 
 <body style="background-color: rgb(43,43,43);">
-    <!-- nav -->
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">WebSiteName</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span
-                            class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Page 1-1</a></li>
-                        <li><a href="#">Page 1-2</a></li>
-                        <li><a href="#">Page 1-3</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Page 2</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-            <form class="navbar-form navbar-right" action="/action_page.php">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Movie Search">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </div>
+    <div id="detail">
+        <!-- nav -->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">WebSiteName</a>
                 </div>
-            </form>
-        </div>
-    </nav>
-    <!-- nav -->
-    <div class="container" id="detail">
-        <!-- carousel -->
-        <div class="container-car">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="pic/con1.jpg" alt="Los Angeles" style="width:100%;">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Page 1-1</a></li>
+                            <li><a href="#">Page 1-2</a></li>
+                            <li><a href="#">Page 1-3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Page 2</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" action="#">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Movie Search" v-model="searchText">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
                     </div>
+                </form>
+            </div>
+        </nav>
+        <!-- nav -->
+        <div class="container">
+            <!-- carousel -->
+            <div class="container-car">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="pic/con1.jpg" alt="Los Angeles" style="width:100%;">
+                        </div>
 
-                    <div class="item">
-                        <img src="pic/con2.jpg" alt="Chicago" style="width:100%;">
-                    </div>
+                        <div class="item">
+                            <img src="pic/con2.jpg" alt="Chicago" style="width:100%;">
+                        </div>
 
-                    <div class="item">
-                        <img src="pic/con3.jpg" alt="New york" style="width:100%;">
+                        <div class="item">
+                            <img src="pic/con3.jpg" alt="New york" style="width:100%;">
+                        </div>
                     </div>
-                </div>
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
-        <!-- carousel -->
-        <!-- choose type -->
-        <div class="row">
-            <div class="col-md-2" v-for="type in categories">
-                <button type="button" id="Mtype" class="btn btn-light rad-button dark gradient">{{type.name}}</button>
-            </div>
-        </div>
-        <!-- choose type -->
-        <!-- choose movie -->
-        <div class="row">
-            <div class="col-md-3" v-for="movie in movies">
-                <div class="card">
-                    <img v-bind:src="movie.poster" style="width: 263px; height: 350px;" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text"><h3>{{movie.name.en}}</h3><h4>{{movie.name.th}}</h4></p>
-                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
+            <!-- carousel -->
+            <!-- choose type -->
+            <div class="row">
+                <div class="col-md-2" v-for="type in categories">
+                    <button type="button" id="Mtype"
+                        class="btn btn-light rad-button dark gradient">{{type.name}}</button>
+                </div>
+            </div>
+            <!-- choose type -->
+            <!-- choose movie -->
+            <div class="row">
+                <div class="col-md-3" v-for="movie in serchResult">
+                    <div class="card">
+                        <img v-bind:src="movie.poster" style="width: 263px; height: 350px;" class="card-img-top"
+                            alt="...">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <h3>{{movie.name.en}}</h3>
+                                <h4>{{movie.name.th}}</h4>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- choose movie -->
         </div>
-        <!-- choose movie -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
-        new Vue({
+        vm = new Vue({
             el: "#detail",
             data: {
+                searchText: "",
                 // หมวดหมู่ภาพยนตร์
                 categories: [
                     { id: 1, name: "Action" },
@@ -180,6 +188,18 @@
                         synopsis: `<div class="desclistsynopsis"><p></p><p>&nbsp;Escape Room เกิดขึ้นเมื่อกลุ่มคนแปลกหน้าต้องมารวมกันในห้องปริศนาที่ไร้ทางออก โดยมีกล้องวงจรปิดเฝ้าดูพวกเขาจากภายนอก วิธีเดียวที่จะออกจากห้องนี้ได้ จะต้องไขรหัสลับของห้องให้ได้ ถ้าแก้ไขรหัสไม่สำเร็จจะต้องตาย แต่หากใครเป็นผู้ชนะของเกมส์นี้จะได้รับรางวัลเป็นเงินหมื่นดอลล่าร์!! แต่เรื่องราวไม่ง่ายขนาดนั้นเพราะคนที่บงการอยู่เบื้องหลังเกมส์นี้มีวัตถุประสงค์บางอย่าง?&nbsp;</p><br><p></p></div>`
                     }
                 ]
+            },
+            computed: {
+                serchResult() {
+                    return this.movies.filter(movie => {
+                        let searchText = this.searchText.toLowerCase()
+                        let isMatchTitleEn = movie.name.en.toLowerCase().includes(searchText)
+                        let isMatchTitleTh = movie.name.th.toLowerCase().includes(searchText)
+                        let isMatchContent = movie.synopsis.toLowerCase().includes(searchText)
+                        return isMatchTitleEn | isMatchTitleTh | isMatchTitleTh
+
+                    })
+                }
             }
 
         })
