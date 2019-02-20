@@ -84,9 +84,9 @@
             <!-- carousel -->
             <!-- choose type -->
             <div class="row">
-                <div class="col-md-2" v-for="type in categories">
+                <div class="col-md-2" v-for="categorie in categories">
                     <button type="button" id="Mtype"
-                        class="btn btn-light rad-button dark gradient">{{type.name}}</button>
+                        class="btn btn-light rad-button dark gradient" @click="chooseCategorie(categorie)">{{categorie.name}}</button>
                 </div>
             </div>
             <!-- choose type -->
@@ -191,6 +191,14 @@
                         synopsis: `<div class="desclistsynopsis"><p></p><p>&nbsp;Escape Room เกิดขึ้นเมื่อกลุ่มคนแปลกหน้าต้องมารวมกันในห้องปริศนาที่ไร้ทางออก โดยมีกล้องวงจรปิดเฝ้าดูพวกเขาจากภายนอก วิธีเดียวที่จะออกจากห้องนี้ได้ จะต้องไขรหัสลับของห้องให้ได้ ถ้าแก้ไขรหัสไม่สำเร็จจะต้องตาย แต่หากใครเป็นผู้ชนะของเกมส์นี้จะได้รับรางวัลเป็นเงินหมื่นดอลล่าร์!! แต่เรื่องราวไม่ง่ายขนาดนั้นเพราะคนที่บงการอยู่เบื้องหลังเกมส์นี้มีวัตถุประสงค์บางอย่าง?&nbsp;</p><br><p></p></div>`
                     }
                 ]
+            },
+            methods:{
+                chooseCategorie(categorie){
+                    if(movie.id.includes(categorie.id)){
+                        console.log(movie.name.en)
+                    }
+                    
+                }
             },
             computed: {
                 serchResult() {
