@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    
 </head>
 
 <body style="background-color: rgb(43,43,43);">
@@ -38,10 +39,12 @@
                         <div class="modal-dialog">
                             <div class="loginmodal-container">
                                 <h1>Login to Your Account</h1><br>
-                                <form>
-                                    <input type="text" name="user" placeholder="Username">
-                                    <input type="password" name="pass" placeholder="Password">
-                                    <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                                <form action="#">
+                                    <div class="form-group">
+                                        <input type="text" name="user" placeholder="Username">
+                                        <input type="password" name="pass" placeholder="Password">
+                                        <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -54,13 +57,16 @@
                         <div class="modal-dialog">
                             <div class="loginmodal-container">
                                 <h1>Sign up new account</h1><br>
-                                <form>
-                                    <input type="text" name="name" placeholder="Name">
-                                    <input type="text" name="surname" placeholder="Surname">
-                                    <input type="email" name="email" placeholder="Email">
-                                    <input type="text" name="user" placeholder="Username">
-                                    <input type="password" name="pass" placeholder="Password">
-                                    <input type="submit" name="signup" class="login loginmodal-submit" value="Sign up">
+                                <form action="#">
+                                    <div class="form-group">
+                                        <input type="text" name="name" placeholder="Name">
+                                        <input type="text" name="surname" placeholder="Surname">
+                                        <input type="email" name="email" placeholder="Email">
+                                        <input type="text" name="user" placeholder="Username">
+                                        <input type="password" name="pass" placeholder="Password">
+                                        <input type="submit" name="signup" class="login loginmodal-submit"
+                                            value="Sign up">
+                                    </div>
                                 </form>
                             </div>
                         </div>
