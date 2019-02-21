@@ -15,7 +15,7 @@
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">WebSiteName</a>
+                    <a class="navbar-brand" href="index.html">My Moon</a>
                 </div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
@@ -30,16 +30,50 @@
                     <li><a href="#">Page 2</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+                    <li><a href="#" data-toggle="modal" data-target="#login-modal"><span
+                                class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                        aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog">
+                            <div class="loginmodal-container">
+                                <h1>Login to Your Account</h1><br>
+                                <form>
+                                    <input type="text" name="user" placeholder="Username">
+                                    <input type="password" name="pass" placeholder="Password">
+                                    <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <li><a href="#" data-toggle="modal" data-target="#sign-modal"><span
+                                class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <div class="modal fade" id="sign-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                        aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog">
+                            <div class="loginmodal-container">
+                                <h1>Sign up new account</h1><br>
+                                <form>
+                                    <input type="text" name="name" placeholder="Name">
+                                    <input type="text" name="surname" placeholder="Surname">
+                                    <input type="email" name="email" placeholder="Email">
+                                    <input type="text" name="user" placeholder="Username">
+                                    <input type="password" name="pass" placeholder="Password">
+                                    <input type="submit" name="signup" class="login loginmodal-submit" value="Sign up">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
                 </ul>
                 <form class="navbar-form navbar-right" action="#">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Movie Search" v-model="searchText">
                         <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit">
+                            <!-- <button class="btn btn-default" type="submit">
                                 <i class="glyphicon glyphicon-search"></i>
-                            </button>
+                            </button> -->
                         </div>
                     </div>
                 </form>
@@ -85,8 +119,8 @@
             <!-- choose type -->
             <div class="row">
                 <div class="col-md-2" v-for="categorie in categories">
-                    <button type="button" id="Mtype"
-                        class="btn btn-light rad-button dark gradient" @click="chooseCategorie(categorie)">{{categorie.name}}</button>
+                    <button type="button" id="Mtype" class="btn btn-light rad-button dark gradient"
+                        @click="chooseCategorie(categorie)">{{categorie.name}}</button>
                 </div>
             </div>
             <!-- choose type -->
@@ -96,9 +130,9 @@
                     <div class="card">
                         <!-- <img v-bind:src="movie.poster" style="" class="card-img-top"
                             > -->
-                            <div class="card_image" :style="{'background-image':'url('+movie.poster+')'}">
+                        <div class="card_image" :style="{'background-image':'url('+movie.poster+')'}">
 
-                            </div>
+                        </div>
                         <div class="card-body">
                             <p class="card-text">
                                 <h3>{{movie.name.en}}</h3>
@@ -192,12 +226,12 @@
                     }
                 ]
             },
-            methods:{
-                chooseCategorie(categorie){
-                    if(movie.id.includes(categorie.id)){
+            methods: {
+                chooseCategorie(categorie) {
+                    if (movie.id.includes(categorie.id)) {
                         console.log(movie.name.en)
                     }
-                    
+
                 }
             },
             computed: {
