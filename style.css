@@ -13,13 +13,13 @@
     margin: 5% 0;
     font-size: 1.1vw;
 }
-.card-body{
+.home.card-body{
     color: aliceblue;
     width: 80%;
     margin-left: 10%;
     padding: 2%;
 }
-.card{
+.home.card{
     background-color: rgb(70, 70, 70);
     border-radius: 5%;
     margin-top: 10%;
@@ -147,4 +147,42 @@ h3{
 .login-btn {
     text-align:center;
     margin-top: 50px;
+}
+.en{
+    font-size: 3vw;
+    color: white;
+    text-align: left;
+}
+.th{
+    font-size: 2vw;
+    color: white;
+    text-align: left;
+}
+.card_image {
+    height: 39vh;
+}
+.de{
+    font-size: 1.2vw;
+}
+.card.de{
+    background-color: rgb(70, 70, 70);
+    border-radius: 5%;
+    padding: 4%;
+    margin: 5% 9%;
+    color: white;
+}
+.profile-movie{
+    margin-left: 4%;
+}
+.re.card{
+    background-color: rgb(70, 70, 70);
+    border-radius: 5%;
+    width: 300px;
+}
+.re.card-body{
+    color: aliceblue;
+    padding: 2%;
+}
+.recomment{
+    margin: 3% 2%;
 }
