@@ -46,7 +46,8 @@
 
                 </ul>
                 <form class=" search form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-4" type="search" placeholder="Search" aria-label="Search" v-model="searchText">
+                    <input class="form-control mr-sm-4" type="search" placeholder="Search" aria-label="Search"
+                        v-model="searchText">
                 </form>
                 <ul class="navbar-nav right">
                     <li class="nav-item log">
@@ -119,7 +120,7 @@
                 <div class="col-md-4" v-for="movie in serchResult">
                     <a :href="movie.webdetail">
                         <div class="card" style="width: 18rem;margin-bottom: 5%;background: #d8cfcf2e;">
-                            <img class="card-img-top" :src="movie.poster" alt="Card image cap" style="">
+                            <img class="card-img-top" :src="movie.poster" alt="Card image cap">
                             <div class="home card-body">
                                 <p class="card-text">
                                     <h3>{{movie.name.en}}</h3>
