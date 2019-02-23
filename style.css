@@ -1,0 +1,169 @@
+*{
+    font-family: "Lato", sans-serif;
+}
+body{
+    background: rgb(0, 0, 0);
+}
+.header {
+    width: 100%;
+    height: 100px;
+    background: #460101;
+  }
+  .nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 100%);
+  }
+  /* .nav.is-sticky {
+    height: 50px;
+  } */
+  .navbar-light .navbar-nav .nav-link {
+    transition: .7s;
+    font-size: 1.1vw;
+    color: rgba(240, 248, 255, 0.76);
+ 
+  }
+  .navbar-light .navbar-nav .nav-link:hover{
+      border-radius: 3px;
+      cursor: pointer;
+      color: #c6342e; 
+ 
+  }
+  li.nav-item {
+    margin-right: 10%;
+}
+.navbar-nav.right{
+    padding-top: 2%;
+    width: 5%;
+}
+.log,.user {
+    position: relative;
+    display: inline-block;
+    
+}
+.log .img-top,.user .img-top {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 7s;
+}
+.log:hover .img-top {
+    display: inline;
+    padding-left: 3%;
+    padding-top: 2%;
+}
+.user:hover .img-top {
+    display: inline;
+    padding-left: 13%;
+}
+.navbar-nav.right a p:hover{
+    color: #c6342e; 
+}
+  .content {
+    width: 100%;
+    height: 100vw;
+  }
+  p{
+      color: aliceblue;
+  }
+  .search input{
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 1vw;
+    height: 37px;
+    width: 20%;
+    background: transparent;
+    color: #ffffff;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: 0;
+    border: 2px solid rgba(245, 245, 245, 0.705);
+    outline: none;
+    border-radius: 37px;
+    padding: 0 10px;
+    pointer-events: all;
+    transition: border .7s ease, width .7s ease .7s;
+  }
+  .search input:focus {
+    border: 2px solid #e50914;
+    background: transparent;
+    width: 20vw;
+    color: rgba(255, 255, 255, 0.74)
+  }
+  .search input:hover {
+    border: 2px solid #e50914;
+    background: transparent;
+    width: 20vw;
+    color: rgba(255, 255, 255, 0.74)
+  }
+  .carousel-item img{
+      height:900px;
+  }
+  .space {
+    width: 100%;
+    height: 150px;
+    background: #000000;
+  }
+  .space h1{
+      font-size: 4vw;
+      color: aliceblue;
+      margin: 0 30%;
+      font-family: "Lato", sans-serif;
+  }
+  .btn-group {
+    display: flex;
+    text-align: center;
+    font-size: 1vh;
+    margin: 0 12%;
+    
+  }
+  .btn-group button:hover {
+    border: 5px solid rgb(46, 9, 9) !important;
+    background: linear-gradient(to top, rgb(66, 39, 39) 0%, rgba(0, 0, 0, 0) 100%);
+    color:  #ffffff
+  }
+  .btn-group button{
+    border-radius:15px 50px;
+    border-right: 2px solid #383838;
+    border-left: 2px solid #5c5b5b;
+    margin-top: 15%;
+    background: linear-gradient(to top, rgb(43, 43, 43) 0%, rgba(0, 0, 0, 0) 100%);
+    color: rgb(185, 185, 185);
+    font-size: 1.5vw;
+    padding: 1vh;
+    transition: border .4s ease, width .4s ease .4s;
+    width: 80%;
+  }
+  .btn-group button:focus{
+    border: 5px solid #680b10;
+    background: linear-gradient(to top, rgb(82, 39, 39) 0%, rgba(0, 0, 0, 0) 100%);
+    color: #ffffff;
+    
+  }
+  .card-img-top {
+    height: 400px;
+}
+h3{
+    font-size: 1.4vw;
+    color: rgb(226, 226, 226);
+}
+h4{
+    font-size: 1vw;
+    color: rgb(226, 226, 226);
+}
+a:hover h3,a:hover h4{
+    color: rgb(155, 30, 30) !important;
+}
+a:hover .card{
+    background: #d8cfcf !important;
+}
+a:hover {
+    color: #0056b3;
+    text-decoration:unset;
+}
