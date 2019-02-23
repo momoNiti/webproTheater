@@ -113,7 +113,6 @@
                                     <div class="form-group">
                                         <label for="cinema-select">เลือกโรงภาพยนต์</label>
                                         <select required class="form-control" id="cinema-select" v-model="cinema_select">
-                                            <option selected disabled value="C0">โรงภาพยนต์ทั้งหมด</option>
                                             <option v-for="cineplex in cineplexs" :value="cineplex.id">{{cineplex.name}}
                                                 </option>
                                         </select>
