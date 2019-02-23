@@ -112,23 +112,13 @@
                                 <div>
                                     <div class="form-group">
                                         <label for="cinema-select">เลือกโรงภาพยนต์</label>
-                                        <select class="form-control" id="cinema-select" v-model="cinema_select">
+                                        <select required class="form-control" id="cinema-select"
+                                            v-model="cinema_select">
                                             <option selected disabled value="C0">โรงภาพยนต์ทั้งหมด</option>
-                                            <option value="C1">เมเจอร์ ซีนีเพล็กซ์ โลตัส บางกะปิ</option>
-                                            <option value="C2">เมเจอร์ ซีนีเพล็กซ์ สุขุมวิท</option>
-                                            <option value="C3">เมกา ซีนีเพล็กซ์ </option>
-                                            <option value="C4">ซีคอน ซีนีเพล็กซ์ </option>
-                                            <option value="C5">พาราไดซ์ ซีนีเพล็กซ์ </option>
+                                            <option v-for="cineplex in cineplexs" :value="cineplex.id">{{cineplex.name}}
+                                            </option>
                                         </select>
                                     </div>
-                                    <!-- <form action="">
-                                        <select v-model="selected">
-                                            <option disabled value="">Please select one</option>
-                                            <option>A</option>
-                                            <option>B</option>
-                                            <option>C</option>
-                                        </select>
-                                    </form> -->
                                     <a href="#" class="btn btn-danger">
                                         <h3>BUY TICKET</h3>
                                     </a>
