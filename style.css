@@ -45,21 +45,24 @@ body{
     display: inline-block;
     
 }
+
 .log .img-top,.user .img-top {
     display: none;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     transition: 7s;
 }
 .log:hover .img-top {
+  position: absolute;
     display: inline;
-    padding-left: 3%;
-    padding-top: 2%;
+    /* padding-left: 3%; */
+    /* padding-top: 2%; */
 }
 .user:hover .img-top {
+  position: absolute;
     display: inline;
-    padding-left: 13%;
+    /* padding-left: 13%; */
 }
 .navbar-nav.right a p:hover{
     color: #c6342e; 
