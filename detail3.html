@@ -72,7 +72,7 @@
         <div class="space05"></div>
         <!-- Trailer start -->
         <div class="video">
-            <iframe width="1120" height="630" :src="'https://www.youtube.com/embed/'+movies[0].ucode+'?'" frameborder="0"
+            <iframe width="1120" height="630" :src="'https://www.youtube.com/embed/'+movies[2].ucode+'?'" frameborder="0"
                 allow="accelerometer; autoplay=1; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
         </div>
@@ -83,20 +83,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-5">
-                        <img :src="movies[0].poster" alt="" width="100%">
+                        <img :src="movies[2].poster" alt="" width="100%">
                     </div>
                     <div class="col-md-7">
                         <div class="card">
                             <div class="card-header">
-                                <h1>{{movies[0].name.en}} </h1>
-                                <footer class="blockquote-footer">{{movies[0].name.th}}</footer>
+                                <h1>{{movies[2].name.en}} </h1>
+                                <footer class="blockquote-footer">{{movies[2].name.th}}</footer>
                             </div>
                             <div class="card-body">
                                 <div class="card-text">
-                                    <p>ผู้กำกับ : {{movies[0].director}}</p>
-                                    <p>นักแสดง : {{movies[0].actors}}</p>
+                                    <p>ผู้กำกับ : {{movies[2].director}}</p>
+                                    <p>นักแสดง : {{movies[2].actors}}</p>
                                     <p> หมวดหมู่ :
-                                        <label v-for="categorie,index in movies[0].categories">
+                                        <label v-for="categorie,index in movies[2].categories">
                                             {{categories[index].name}}&nbsp;
                                         </label>
                                     </p>
@@ -106,7 +106,7 @@
                                         </div>
                                         <div class="col-md-10"
                                             style="height:29vh;width:11vw;border:1px solid rgba(204, 204, 204, 0);font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
-                                            <label for=""><span v-html="movies[0].synopsis"></span></label>
+                                            <label for=""><span v-html="movies[2].synopsis"></span></label>
                                         </div>
                                     </div>
                                 </div>
