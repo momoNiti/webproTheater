@@ -1,7 +1,8 @@
 vm = new Vue({
     el: "#app",
     data: {
-        searchText: "",
+        cinema_select: '',
+        searchText: '',
         click_count: 1,
         check_cate: 0,
         // หมวดหมู่ภาพยนตร์
@@ -60,7 +61,7 @@ vm = new Vue({
             {
                 showMe: true,
                 id: 4,
-                name: { en: "Ruk-Mai-Pen-Pasa", th: "รักไม่เป็นภาษา" },
+                name: { en: "Ruk-1-Pen-Pasa", th: "รักไม่เป็นภาษา" },
                 poster: "http://www.majorcineplex.com/uploads/movie/2609/thumb_2609.jpg",
                 director: "ทีมไข่กวน",
                 actors: "โบว์ - เมลดา สุศรี, ฟรอยด์ - ณัฏฐพงษ์ ชาติพงศ์, เบสท์ - ณัฐสิทธิ์ โกฏิมนัสวนิชย์, ซุง กิดาการ ฉัตรแก้วมณี, แอริน ยุกตะทัต, ปริม - อัจฉรียา โพธิพิพิธธนากร, แอนโทเนีย ทูทิลล์, แม็ค - อชิระ เอทเตอร์, เคลเล็น เจมส์ ",
