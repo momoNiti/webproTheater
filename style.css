@@ -132,7 +132,6 @@ body{
   .btn-group {
     display: flex;
     text-align: center;
-    font-size: 1vh;
     margin: 0 12%;
     
   }
@@ -151,7 +150,7 @@ body{
     font-size: 1.5vw;
     padding: 1vh;
     transition: border .4s ease, width .4s ease .4s;
-    width: 80%;
+    width: 95%;
   }
   .btn-group button:focus{
     border: 5px solid #680b10;

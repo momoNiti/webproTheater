@@ -108,8 +108,7 @@
                     <div class="row">
                         <!-- <template v-for="movie in movies"> -->
                         <div class="col-md-2" v-for="categorie in categories">
-                            <button type="button" @click.stop="chooseCategorie(categorie)">{{categorie.name}}
-                            </button>
+                            <button type="button" @click="chooseCategorie(categorie)"><h4 class="text-uppercase">{{categorie.name}}</h4></button>
                         </div>
                         <!-- </template> -->
                     </div>
@@ -262,7 +261,7 @@
                         for (i = 0; i < this.movies.length; i++) {
                             this.movies[i].showMe = true;
                         }
-                        this.click_count = 0;
+                        this.click_count = ล0;
                     }
 
                 }
