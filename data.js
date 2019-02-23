@@ -1,7 +1,7 @@
 vm = new Vue({
     el: "#app",
     data: {
-        cinema_select: '',
+        cineplex_select: '',
         searchText: '',
         click_count: 1,
         check_cate: 0,
@@ -21,11 +21,12 @@ vm = new Vue({
             { id: 12, name: "Romance" },
         ],
         cineplexs:[
-            { id: "C1", name: "เมเจอร์ ซีนีเพล็กซ์ โลตัส บางกะปิ" },
-            { id: "C2", name: "เมเจอร์ ซีนีเพล็กซ์ สุขุมวิท" },
-            { id: "C3", name: "เมกา ซีนีเพล็กซ์" },
-            { id: "C4", name: "ซีคอน ซีนีเพล็กซ์" },
-            { id: "C5", name: "พาราไดซ์ ซีนีเพล็กซ์" },
+            { id: "C0", name: "โรงภาพยนตร์ทั้งหมด", selected: "selected" },
+            { id: "C1", name: "เมเจอร์ ซีนีเพล็กซ์ โลตัส บางกะปิ", selected: "" },
+            { id: "C2", name: "เมเจอร์ ซีนีเพล็กซ์ สุขุมวิท", selected: "" },
+            { id: "C3", name: "เมกา ซีนีเพล็กซ์", selected: "" },
+            { id: "C4", name: "ซีคอน ซีนีเพล็กซ์", selected: "" },
+            { id: "C5", name: "พาราไดซ์ ซีนีเพล็กซ์", selected: "" },
         ],
         // ภาพยนตร์
         movies: [
