@@ -5,6 +5,7 @@ vm = new Vue({
         seat_select: [],
         date_select:  '',
         time_select: '',
+        // 
         searchText: '',
         click_count: 1,
         check_cate: 0,
@@ -166,9 +167,16 @@ vm = new Vue({
             }
 
         },
-        // chooseTime: function(e){
-        //     time_select = e.target.value;
-        // }
+        seatSelected: function(e){
+            // console.log(e.target.parentNode);
+            if(e.target.parentNode.style.color === 'red'){
+                e.target.parentNode.style.color = 'wheat';
+            }
+            else{
+                e.target.parentNode.style.color = 'red';
+            }
+            
+        },
     },
     computed: {
         searchResult() {
