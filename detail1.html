@@ -114,13 +114,21 @@
                                         <label for="cineplex-select">เลือกโรงภาพยนต์</label>
                                         <select required class="form-control" id="cineplex-select"
                                             v-model="cineplex_select">
-                                            <option v-for="cineplex in cineplexs" :disabled="cineplex.disabled" :value="cineplex.id">{{cineplex.name}}
+                                            <option v-for="cineplex in cineplexs" :disabled="cineplex.disabled"
+                                                :value="cineplex.id">{{cineplex.name}}
                                             </option>
                                         </select>
                                     </div>
-                                    <a href="showtime.html" class="btn btn-danger">
-                                        <h3>BUY TICKET</h3>
-                                    </a>
+                                    <template v-if="cineplex_select === 'C0'">
+                                        <button class="btn btn-danger" disabled>
+                                            <h3>BUY TICKET</h3>
+                                        </button>
+                                    </template>
+                                    <template v-else>
+                                        <a href="showtime.html" class="btn btn-danger">
+                                            <h3>BUY TICKET</h3>
+                                        </a>
+                                    </template>
                                 </div>
                             </div>
                         </div>

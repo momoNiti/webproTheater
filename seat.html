@@ -17,6 +17,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script>
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
 </head>
 
@@ -100,7 +101,6 @@
                 <div class="md-step-bar-right"></div>
             </div>
         </div>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script>
         <!-- step bar end-->
         <div class="container">
             <div class="row" id="cineplex-screen">
@@ -133,9 +133,18 @@
                 </div>
             </div>
             <!-- next step -->
-            <div class="next-step">
-                <button type="button" class="btn btn-danger btn-lg">NEXT</button>
-            </div>
+            <template v-if="seat_select.length <= 0">
+                <div class="next-step">
+                    <button type="button" class="btn btn-danger btn-lg" disabled>NEXT</button>
+                </div>
+            </template>
+
+            <template v-else>
+                <div class="next-step">
+                    <button type="button" class="btn btn-danger btn-lg">NEXT</button>
+                </div>
+            </template>
+
             <!-- next step -->
         </div>
     </div>
