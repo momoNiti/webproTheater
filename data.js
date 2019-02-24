@@ -1,7 +1,7 @@
 vm = new Vue({
     el: "#app",
     data: {
-        cineplex_select: '',
+        cineplex_select: "C0",
         searchText: '',
         click_count: 1,
         check_cate: 0,
@@ -21,7 +21,7 @@ vm = new Vue({
             { id: 12, name: "Romance" },
         ],
         cineplexs:[
-            { id: "C0", name: "โรงภาพยนตร์ทั้งหมด", selected: "selected" },
+            { id: "C0", name: "โรงภาพยนตร์ทั้งหมด", selected: "selected", disabled: "disabled" },
             { id: "C1", name: "เมเจอร์ ซีนีเพล็กซ์ โลตัส บางกะปิ", selected: "" },
             { id: "C2", name: "เมเจอร์ ซีนีเพล็กซ์ สุขุมวิท", selected: "" },
             { id: "C3", name: "เมกา ซีนีเพล็กซ์", selected: "" },
