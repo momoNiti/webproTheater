@@ -114,7 +114,7 @@
                             <td v-if="Number(number) <= 9">
                                 {{row.id}}{{number}}
                                 <input type='checkbox' :id="row.id + number" :value='row.id + number'
-                                    v-model="seat_select" />
+                                    v-model="seat_select" @click="seatSelected($event)" />
                             </td>
                         </template>
                     </table>
