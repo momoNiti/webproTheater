@@ -5,6 +5,7 @@ vm = new Vue({
         searchText: '',
         click_count: 1,
         check_cate: 0,
+        seat_select: [],
         // หมวดหมู่ภาพยนตร์
         categories: [
             { id: 1, name: "Action" },
