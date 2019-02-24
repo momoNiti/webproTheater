@@ -384,6 +384,7 @@ h2 {
 @media screen and (min-width: 1024px) {
   #form-wrapper {
     left: calc(50vw - 512px);
+    margin-bottom: 5%;
   }
 }
 @media screen and (max-width: 1023px) {
