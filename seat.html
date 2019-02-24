@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- nav start -->
+        <div class="header"></div>
+        <nav class="nav sticky-top navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="index.html"><img src="pic/logo.png" alt="" width="150px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class=" collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#moviezone">Movie <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">??? <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+
+                <form class=" search form-inline  mr-4">
+                    <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search"
+                        v-model="searchText">
+                </form>
+                <ul class="navbar-nav mr-10">
+                    <li class="nav-item log">
+                        <a href="">
+                            <img src="pic/login-password.png">
+                            <img src="pic/login-passwordh.png" class="img-top" alt="Card Front">
+                            <p>Login</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item user">
+                        <a href="">
+                            <img src="pic/avatar.png">
+                            <img src="pic/userh.png" class="img-top" alt="Card Front">
+                            <p>SignUp</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- <mynavbar></mynavbar> -->
+        <!-- nav end -->
+        <div class="container">
+            <div class="row" id="cineplex-screen">
+                <h1 style="margin: 0 auto; margin-top: 20px;">SCREEN</h1>
+            </div>
+            <div class="row" v-for="row in seats">
+                <div class="col-md-5">
+                    <table>
+                        <template v-for="number in row.seat_no">
+                            <td v-if="Number(number) <= 9">
+                                {{row.id}}{{number}}
+                            </td>
+                        </template>
+                    </table>
+                </div>
+                <div class="col-md-2" style="width: 100%; background-color: #260101d4"></div>
+                <div class="col-md-5">
+                    <table>
+                        <template v-for="number in row.seat_no">
+                            <td v-if="Number(number) > 9">
+                                {{row.id}}{{number}}
+                            </td>
+                        </template>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="navbar.js"></script>
+    <script src="data.js"></script>
+</body>
+
+</html>
