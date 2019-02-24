@@ -74,11 +74,14 @@
                 <h1 style="margin: 0 auto; margin-top: 20px;">SCREEN</h1>
             </div>
             <div class="row" v-for="row in seats">
+
                 <div class="col-md-5">
                     <table>
                         <template v-for="number in row.seat_no">
                             <td v-if="Number(number) <= 9">
                                 {{row.id}}{{number}}
+                                <input type='checkbox' :id="row.id + number" :value='row.id + number'
+                                    v-model="seat_select" />
                             </td>
                         </template>
                     </table>
@@ -89,10 +92,15 @@
                         <template v-for="number in row.seat_no">
                             <td v-if="Number(number) > 9">
                                 {{row.id}}{{number}}
+                                <input type='checkbox' :id="row.id + number" :value="row.id + number"
+                                    v-model="seat_select" />
                             </td>
                         </template>
                     </table>
                 </div>
+            </div>
+            <div class="row" style="float: right; margin-top: 1em; margin-right: 1em;">
+                <button type="button" style="width: 150px; height: 50px;">จอง</button>
             </div>
         </div>
     </div>
