@@ -377,3 +377,6 @@ td{
 .next-step button:hover{
   background: #641717;
 }
+h2 {
+  font-size: 2vw;
+}
