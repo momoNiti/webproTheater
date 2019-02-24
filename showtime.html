@@ -117,18 +117,29 @@
                         <label for="chooseDate">Select Date:</label>
                         <input type="date" name="chooseDate" id="chooseDate" v-model="date_select">
                         <label for="chooseDate">Showtime: </label>
-                        <button type="button" class="btn btn-outline-dark" disabled>11:30</button>
-                        <button type="button" class="btn btn-outline-dark">12:50</button>
-                        <button type="button" class="btn btn-outline-dark">14:56</button>
+                        <button type="button" class="btn btn-outline-dark" value="11:30"
+                            @click="time_select = $event.target.value">11:30</button>
+                        <button type="button" class="btn btn-outline-dark" value="12:50"
+                            @click="time_select = $event.target.value">12:50</button>
+                        <button type="button" class="btn btn-outline-dark" value="14:56"
+                            @click="time_select = $event.target.value">14:56</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- choose -->
         <!-- next step -->
-        <div class="next-step">
-            <a href="seat.html"><button type="button" class="btn btn-danger btn-lg">NEXT</button></a>
-        </div>
+        <template v-if="date_select === '' || time_select === ''">
+            <div class="next-step">
+                <button type="button" class="btn btn-danger btn-lg" disabled>NEXT</button>
+            </div>
+        </template>
+
+        <template v-else>
+                <div class="next-step">
+                    <a href="seat.html"><button type="button" class="btn btn-danger btn-lg">NEXT</button></a>
+                </div>
+            </template>
         <!-- next step -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

@@ -4,6 +4,7 @@ vm = new Vue({
         cineplex_select: "C0",
         seat_select: [],
         date_select:  '',
+        time_select: '',
         searchText: '',
         click_count: 1,
         check_cate: 0,
@@ -164,7 +165,10 @@ vm = new Vue({
                 this.click_count = 0;
             }
 
-        }
+        },
+        // chooseTime: function(e){
+        //     time_select = e.target.value;
+        // }
     },
     computed: {
         searchResult() {
