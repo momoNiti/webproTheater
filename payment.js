@@ -1,31 +1,31 @@
 $(document).ready(function() {
 	var formheight = $("#form-wrapper").height();
 	var formleftheight = $("#form-left-wrapper").height();
-	var currentformpage = "shipping";
-	var paymentbody = $("#payment-body");
-	var confirmationbody = $("#confirmation-body");
-	var shippingbody = $("#shipping-body");
+	var currentformpage = "cash";
+	var creditbody = $("#credit-body");
+	var promptbody = $("#prompt-body");
+	var cashbody = $("#cash-body");
 	var currentformpagediv;
 	
 	// Variable decleration to check whether information has been submitted on each page. //
-	var shippingstatus = false;
-	var paymentstatus = false;
-	var confirmationstatus = false;
+	var cashstatus = false;
+	var creditstatus = false;
+	var promptstatus = false;
 
-	function shippingPageInit() {
-		paymentbody.hide();
-		confirmationbody.hide();
-		shippingbody.fadeIn(700);
+	function cashPageInit() {
+		creditbody.hide();
+		promptbody.hide();
+		cashbody.fadeIn(700);
 	}
-	function paymentPageInit() {
-		confirmationbody.hide();
-		shippingbody.hide();
-		paymentbody.fadeIn(700);
+	function creditPageInit() {
+		promptbody.hide();
+		cashbody.hide();
+		creditbody.fadeIn(700);
 	}
-	function confirmationPageInit() {
-		shippingbody.hide();
-		paymentbody.hide();
-		confirmationbody.fadeIn(700);
+	function promptPageInit() {
+		cashbody.hide();
+		creditbody.hide();
+		promptbody.fadeIn(700);
 	}
 	// Getting the prices and adding them together to get the total //
 	var cartprice = $(".cart-price");
@@ -48,45 +48,37 @@ $(document).ready(function() {
 		} else {
 			$(this).toggleClass("current");
 			var currenttab = $(this).html();
-			if (currenttab == "Shipping") {
-				currentformpage = "shipping";
-				shippingPageInit();
+			if (currenttab == "Cash") {
+				currentformpage = "cash";
+				cashPageInit();
 				currentformpagediv = "#" + currentformpage + "-body";
-			} else if (currenttab == "Payment") {
-				currentformpage = "payment";
-				paymentPageInit();
+			} else if (currenttab == "Credit Card") {
+				currentformpage = "credit";
+				creditPageInit();
 				currentformpagediv = "#" + currentformpage + "-body";
-			} else if (currenttab == "Confirmation") {
-				currentformpage = "confirmation";
-				confirmationPageInit();
+			} else if (currenttab == "Promptpay") {
+				currentformpage = "prompt";
+				promptPageInit();
 				currentformpagediv = "#" + currentformpage + "-body";
 			}
 		}
 	});
-	$(".form-input-checkbox, #shipping-checkbox").click(function() {
-		var checkbox = document.getElementById("shipping-checkbox");
-		if (checkbox.checked == true) {
-			checkbox.checked = false;
-		} else {
-			checkbox.checked = true;
-		}
-	});
 	function nextPageForm() {
 		$(".tab-menu-item").removeClass("current");
-		if (currentformpage == "shipping") {
-			$(".payment-tab").addClass("current");
-			$("#shipping-body").hide();
-			$("#confirmation-body").hide();
-			$("#payment-body").fadeIn(700);
-			currentformpage = "payment";
-		} else if (currentformpage == "payment") {
-			$(".confirmation-tab").addClass("current");
-			$("#shipping-body").hide();
-			$("#payment-body").hide();
-			$("#confirmation-body").fadeIn(700);
-			currentformpage = "confirmation";
+		if (currentformpage == "cash") {
+			$(".credit-tab").addClass("current");
+			$("#cash-body").hide();
+			$("#prompt-body").hide();
+			$("#credit-body").fadeIn(700);
+			currentformpage = "credit";
+		} else if (currentformpage == "credit") {
+			$(".prompt-tab").addClass("current");
+			$("#cash-body").hide();
+			$("#credit-body").hide();
+			$("#prompt-body").fadeIn(700);
+			currentformpage = "prompt";
 		} else {
-			$(".confirmation-tab").addClass("current");
+			$(".prompt-tab").addClass("current");
 		}
 	}
 
