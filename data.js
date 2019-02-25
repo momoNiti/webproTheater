@@ -1,6 +1,18 @@
 vm = new Vue({
     el: "#app",
     data: {
+
+        //user
+        user: {
+            name: "",
+            surname: "",
+            email: "",
+            address: "",
+            userType: "",
+            paymentType: "",
+            creditNumber: "",
+        },
+        //cineplex
         cineplex_select: "C0",
         seat_select: [],
         date_select:  '',
