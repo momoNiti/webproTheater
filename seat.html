@@ -191,14 +191,14 @@
                                     <template v-if="user.userType === 'child'">
                                         <div class="form-group">
                                             <label for="inputchildNumber">Child</label>
-                                            <input type="number" min="0" class="form-control" id="inputchildNumber"
+                                            <input type="number" disabled class="form-control" id="inputchildNumber"
                                                 placeholder="0" v-model="user.childNumber = seat_select.length">
                                         </div>
                                     </template>
                                     <template v-if="user.userType === 'adult'">
                                         <div class="form-group">
                                             <label for="inputadultNumber">Adult</label>
-                                            <input type="number" min="0" class="form-control" id="inputadultNumber"
+                                            <input type="number" disabled  class="form-control" id="inputadultNumber"
                                                 placeholder="0" v-model="user.adultNumber = seat_select.length">
                                         </div>
                                     </template>
