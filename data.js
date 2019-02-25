@@ -199,7 +199,7 @@ vm = new Vue({
         isSelectMore: function () {
             if (Number(this.user.childNumber) > Number(this.seat_select.length)) {
                 alert("You input too much");
-                this.user.childNumber -= 1;
+                this.user.childNumber = Number(this.seat_select.length);
             }
         },
 
