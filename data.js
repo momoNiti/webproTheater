@@ -11,6 +11,9 @@ vm = new Vue({
             userType: "",
             paymentType: "",
             creditNumber: "",
+            phoneNumber: "",
+            adultNumber: 0,
+            childNumber: 0,
         },
         //cineplex
         cineplex_select: "C0",
@@ -189,6 +192,13 @@ vm = new Vue({
             }
             
         },
+
+        isSelectMore: function(){
+            if(Number(this.user.childNumber) > Number(this.seat_select.length)){
+                alert("You input too much");
+                this.user.childNumber -= 1;
+            }
+        }
     },
     computed: {
         searchResult() {
@@ -200,6 +210,10 @@ vm = new Vue({
                 return isMatchTitleEn | isMatchTitleTh | isMatchTitleTh
 
             })
+        },
+        calculateAdult(){
+            this.user.adultNumber = Number(this.seat_select.length) - Number(this.user.childNumber);
+            return this.user.adultNumber;
         }
     }
 
