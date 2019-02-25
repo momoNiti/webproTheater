@@ -14,11 +14,12 @@ vm = new Vue({
             phoneNumber: "",
             adultNumber: 0,
             childNumber: 0,
+            price: 0,
         },
         //cineplex
         cineplex_select: "C0",
         seat_select: [],
-        date_select:  '',
+        date_select: '',
         time_select: '',
         // 
         searchText: '',
@@ -39,7 +40,7 @@ vm = new Vue({
             { id: 11, name: "Sci-Fi" },
             { id: 12, name: "Romance" },
         ],
-        cineplexs:[
+        cineplexs: [
             { id: "C0", name: "โรงภาพยนตร์ทั้งหมด", selected: "selected", disabled: "disabled" },
             { id: "C1", name: "เมเจอร์ ซีนีเพล็กซ์ โลตัส บางกะปิ", selected: "" },
             { id: "C2", name: "เมเจอร์ ซีนีเพล็กซ์ สุขุมวิท", selected: "" },
@@ -124,34 +125,34 @@ vm = new Vue({
         ],
         seats: [
             {
-                id: "A",
-                seat_no: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],
-                price: 280,
-            },
-            {
-                id: "B",
-                seat_no: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],
-                price: 280,
-            },
-            {
-                id: "C",
-                seat_no: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],
-                price: 220,
-            },
-            {
-                id: "D",
-                seat_no: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],
+                id: "F",
+                seat_no: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
                 price: 220,
             },
             {
                 id: "E",
-                seat_no: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],
+                seat_no: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
                 price: 220,
             },
             {
-                id: "F",
-                seat_no: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],
+                id: "D",
+                seat_no: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
                 price: 220,
+            },
+            {
+                id: "C",
+                seat_no: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+                price: 220,
+            },
+            {
+                id: "B",
+                seat_no: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+                price: 280,
+            },
+            {
+                id: "A",
+                seat_no: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+                price: 280,
             },
         ]
     },
@@ -182,23 +183,45 @@ vm = new Vue({
             }
 
         },
-        seatSelected: function(e){
+        seatSelected: function (e) {
             // console.log(e.target.parentNode);
-            if(e.target.parentNode.style.color === 'red'){
+            if (e.target.parentNode.style.color === 'red') {
                 e.target.parentNode.style.color = 'wheat';
+                this.calculatePrice;
             }
-            else{
+            else {
                 e.target.parentNode.style.color = 'red';
+                this.calculatePrice;
             }
-            
+
         },
 
-        isSelectMore: function(){
-            if(Number(this.user.childNumber) > Number(this.seat_select.length)){
+        isSelectMore: function () {
+            if (Number(this.user.childNumber) > Number(this.seat_select.length)) {
                 alert("You input too much");
                 this.user.childNumber -= 1;
             }
+        },
+
+        calculatePrice: function() {
+            let price = 0;
+            for (k = 0; k < this.seat_select.length; k++) {
+                for (i = 0; i < this.seats.length; i++) {
+                    for (j = 0; j < this.seats[i].seat_no.length; j++) {
+                        let temp = this.seats[i].id + this.seats[i].seat_no[j];
+                        if (this.seat_select[k] === temp) {
+                            
+                            price += this.seats[i].price;
+                            // this.user.price = price;
+                        }
+                    }
+                }
+            }
+            this.user.price = price;
+            return this.user.price;
         }
+
+
     },
     computed: {
         searchResult() {
@@ -211,10 +234,10 @@ vm = new Vue({
 
             })
         },
-        calculateAdult(){
+        calculateAdult() {
             this.user.adultNumber = Number(this.seat_select.length) - Number(this.user.childNumber);
             return this.user.adultNumber;
-        }
+        },
     }
 
 })
