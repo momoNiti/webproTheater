@@ -220,7 +220,7 @@
                 <template v-else>
                     <div class="next-step">
                         <div class="form-payment">
-                            <form action="myTicket.html" method="GET">
+                            <form action="myTicket.html">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputName">Name</label>
@@ -336,7 +336,7 @@
                                             v-model="user.price">
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-danger btn-lg">NEXT</button>
+                                <button type="submit" class="btn btn-danger btn-lg" @click="persist">NEXT</button>
                             </form>
                         </div>
 

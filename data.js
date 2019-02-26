@@ -237,9 +237,76 @@ vm = new Vue({
             price -= (this.user.childNumber * 60)
             this.user.price = price;
             return this.user.price;
+        },
+
+        persist() {
+            localStorage.cineplex_select = this.cineplex_select;
+            localStorage.seat_select = this.seat_select;
+            localStorage.date_select = this.date_select;
+            localStorage.time_select = this.time_select;
+
+            localStorage.name = this.user.name;
+            localStorage.surname = this.user.surname;
+            localStorage.email = this.user.email;
+            localStorage.address = this.user.address;
+            localStorage.userType = this.user.userType;
+            localStorage.paymentType = this.user.paymentType;
+            localStorage.creditNumber = this.user.creditNumber;
+            localStorage.phoneNumber = this.user.phoneNumber;
+            localStorage.adultNumber = this.user.adultNumber;
+            localStorage.childNumber = this.user.adultNumber;
+            localStorage.price = this.user.price;
+        },
+
+    },
+    //localstorage
+    
+    mounted() {
+        if (localStorage.cineplex_select) {
+            this.cineplex_select = localStorage.cineplex_select;
         }
-
-
+        if (localStorage.seat_select) {
+            this.seat_select = localStorage.seat_select;
+        }
+        if (localStorage.date_select) {
+            this.date_select = localStorage.date_select;
+        }
+        if (localStorage.time_select) {
+            this.time_select = localStorage.time_select;
+        }
+        if (localStorage.name) {
+            this.user.name = localStorage.name;
+        }
+        if (localStorage.surname) {
+            this.user.surname = localStorage.surname;
+        }
+        if (localStorage.email) {
+            this.user.email = localStorage.email;
+        }
+        if (localStorage.address) {
+            this.user.address = localStorage.address;
+        }
+        if (localStorage.userType) {
+            this.user.userType = localStorage.userType;
+        }
+        if (localStorage.paymentType) {
+            this.user.paymentType = localStorage.paymentType;
+        }
+        if (localStorage.creditNumber) {
+            this.user.creditNumber = localStorage.creditNumber;
+        }
+        if (localStorage.phoneNumber) {
+            this.user.phoneNumber = localStorage.phoneNumber;
+        }
+        if (localStorage.adultNumber) {
+            this.user.adultNumber = localStorage.adultNumber;
+        }
+        if (localStorage.childNumber) {
+            this.user.childNumber = localStorage.childNumber;
+        }
+        if (localStorage.price) {
+            this.user.price = localStorage.price;
+        }
     },
     computed: {
         searchResult() {
@@ -258,13 +325,13 @@ vm = new Vue({
                 this.calculatePrice();
                 return this.user.adultNumber;
             }
-            else if(this.user.userType === 'child'){
+            else if (this.user.userType === 'child') {
                 this.user.childNumber = Number(this.seat_select.length);
                 this.user.adultNumber = 0;
                 this.calculatePrice();
                 return this.user.childNumber;
             }
-            else if(this.user.userType === 'adult'){
+            else if (this.user.userType === 'adult') {
                 this.user.childNumber = 0;
                 this.user.adultNumber = Number(this.seat_select.length);
                 this.calculatePrice();
@@ -272,6 +339,6 @@ vm = new Vue({
             }
 
         },
-    }
+    },
 
 })
