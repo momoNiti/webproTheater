@@ -169,7 +169,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-5">
                                         <label for="userType">User Type</label>
-                                        <select required id="userType" class="form-control" v-model="user.userType">
+                                        <select required id="userType" class="form-control" v-model="user.userType" @change="calculatePrice()">
                                             <option selected disabled>Please Select</option>
                                             <option value="child">Child</option>
                                             <option value="adult">Adult</option>
@@ -185,21 +185,21 @@
                                         <div class="form-group">
                                             <label for="inputadultNumber">Adult</label>
                                             <input type="text" disabled min="0" class="form-control"
-                                                id="inputadultNumber" placeholder="0" v-model="calculateAdult">
+                                                id="inputadultNumber" placeholder="0" v-model="calculateType">
                                         </div>
                                     </template>
                                     <template v-if="user.userType === 'child'">
                                         <div class="form-group">
                                             <label for="inputchildNumber">Child</label>
                                             <input type="number" disabled class="form-control" id="inputchildNumber"
-                                                placeholder="0" v-model="user.childNumber = seat_select.length">
+                                                placeholder="0" v-model="calculateType">
                                         </div>
                                     </template>
                                     <template v-if="user.userType === 'adult'">
                                         <div class="form-group">
                                             <label for="inputadultNumber">Adult</label>
                                             <input type="number" disabled  class="form-control" id="inputadultNumber"
-                                                placeholder="0" v-model="user.adultNumber = seat_select.length">
+                                                placeholder="0" v-model="calculateType">
                                         </div>
                                     </template>
                                 </div>

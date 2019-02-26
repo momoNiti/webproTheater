@@ -205,11 +205,9 @@ vm = new Vue({
             // console.log(e.target.parentNode);
             if (e.target.parentNode.style.color === 'red') {
                 e.target.parentNode.style.color = 'wheat';
-                this.calculatePrice;
             }
             else {
                 e.target.parentNode.style.color = 'red';
-                this.calculatePrice;
             }
 
         },
@@ -221,20 +219,22 @@ vm = new Vue({
             }
         },
 
-        calculatePrice: function() {
+        calculatePrice: function () {
+
             let price = 0;
             for (k = 0; k < this.seat_select.length; k++) {
                 for (i = 0; i < this.seats.length; i++) {
                     for (j = 0; j < this.seats[i].seat_no.length; j++) {
                         let temp = this.seats[i].id + this.seats[i].seat_no[j];
                         if (this.seat_select[k] === temp) {
-                            
-                            price += this.seats[i].price;
+
+                            price += this.seats[i].price.adult;
                             // this.user.price = price;
                         }
                     }
                 }
             }
+            price -= (this.user.childNumber * 60)
             this.user.price = price;
             return this.user.price;
         }
@@ -252,9 +252,22 @@ vm = new Vue({
 
             })
         },
-        calculateAdult() {
-            this.user.adultNumber = Number(this.seat_select.length) - Number(this.user.childNumber);
-            return this.user.adultNumber;
+        calculateType() {
+            if (this.user.userType === 'both') {
+                this.user.adultNumber = Number(this.seat_select.length) - Number(this.user.childNumber);
+                return this.user.adultNumber;
+            }
+            else if(this.user.userType === 'child'){
+                this.user.childNumber = Number(this.seat_select.length);
+                this.user.adultNumber = 0;
+                return this.user.childNumber;
+            }
+            else if(this.user.userType === 'adult'){
+                this.user.childNumber = 0;
+                this.user.adultNumber = Number(this.seat_select.length);
+                return this.user.adultNumber;
+            }
+
         },
     }
 
