@@ -255,16 +255,19 @@ vm = new Vue({
         calculateType() {
             if (this.user.userType === 'both') {
                 this.user.adultNumber = Number(this.seat_select.length) - Number(this.user.childNumber);
+                this.calculatePrice();
                 return this.user.adultNumber;
             }
             else if(this.user.userType === 'child'){
                 this.user.childNumber = Number(this.seat_select.length);
                 this.user.adultNumber = 0;
+                this.calculatePrice();
                 return this.user.childNumber;
             }
             else if(this.user.userType === 'adult'){
                 this.user.childNumber = 0;
                 this.user.adultNumber = Number(this.seat_select.length);
+                this.calculatePrice();
                 return this.user.adultNumber;
             }
 
