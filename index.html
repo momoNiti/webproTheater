@@ -22,6 +22,62 @@
 
 <body>
     <div id="app">
+        <!--Modal: Login / Register Form-->
+        <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold" style="color:#212529;">Login</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-5">
+                        <div class="md-form mb-2">
+                            <input type="email" id="defaultForm-email" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="defaultForm-email"
+                                style="color:rgba(83, 82, 82, 0.514)">Your email</label>
+                        </div>
+                        <div class="md-form mb-2">
+                            <input type="password" id="defaultForm-pass" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="defaultForm-pass"
+                                style="color:rgba(83, 82, 82, 0.514)">Your password</label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-default bg-primary text-light">Login</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalSignForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold" style="color:#212529;">Sign in</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-5">
+                        <div class="md-form mb-2">
+                            <input type="email" id="defaultForm-email" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="defaultForm-email"
+                                style="color:rgba(83, 82, 82, 0.514)">Your email</label>
+                        </div>
+                        <div class="md-form mb-2">
+                            <input type="password" id="defaultForm-pass" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="defaultForm-pass"
+                                style="color:rgba(83, 82, 82, 0.514)">Your password</label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-default bg-primary text-light">Sign in</button>
+                </div>
+            </div>
+        </div>
+        <!--Modal: Login / Register Form-->
         <!-- nav start -->
         <div class="header"></div>
         <nav class="nav sticky-top navbar navbar-expand-lg navbar-light">
@@ -47,7 +103,7 @@
                 </form>
                 <ul class="navbar-nav mr-10">
                     <li class="nav-item log">
-                        <a href="">
+                        <a href="#" data-toggle="modal" data-target="#modalLoginForm">
                             <img src="pic/login-password.png">
                             <img src="pic/login-passwordh.png" class="img-top" alt="Card Front">
                             <p>Login</p>
@@ -55,7 +111,7 @@
                     </li>
 
                     <li class="nav-item user">
-                        <a href="">
+                        <a href="#" data-toggle="modal" data-target="#modalSignForm">
                             <img src="pic/avatar.png">
                             <img src="pic/userh.png" class="img-top" alt="Card Front">
                             <p>SignUp</p>
@@ -106,7 +162,9 @@
                     <div class="row">
                         <!-- <template v-for="movie in movies"> -->
                         <div class="col-md-2" v-for="categorie in categories">
-                            <button type="button" @click="chooseCategorie(categorie)"><h4 class="text-uppercase">{{categorie.name}}</h4></button>
+                            <button type="button" @click="chooseCategorie(categorie)">
+                                <h4 class="text-uppercase">{{categorie.name}}</h4>
+                            </button>
                         </div>
                         <!-- </template> -->
                     </div>
