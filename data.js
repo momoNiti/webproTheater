@@ -260,7 +260,7 @@ vm = new Vue({
 
     },
     //localstorage
-    
+
     mounted() {
         if (localStorage.cineplex_select) {
             this.cineplex_select = localStorage.cineplex_select;
@@ -338,6 +338,13 @@ vm = new Vue({
                 return this.user.adultNumber;
             }
 
+        },
+        findcineplexName() {
+            for (i = 0; i < this.cineplexs.length; i++) {
+                if (this.cineplexs[i].id === this.cineplex_select) {
+                    return this.cineplexs[i].name;
+                }
+            }
         },
     },
 

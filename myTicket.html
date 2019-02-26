@@ -146,20 +146,20 @@
         <div class="md-stepper-horizontal orange">
             <div class="md-step active">
                 <!-- <a href="showtime.html"> -->
-                    <div class="md-step-circle"><span>1</span></div>
-                    <div class="md-step-title">Select Showtime</div>
-                    <div class="md-step-optional"><img src="pic/cinema.png" alt=""></div>
-                    <div class="md-step-bar-left"></div>
-                    <div class="md-step-bar-right"></div>
+                <div class="md-step-circle"><span>1</span></div>
+                <div class="md-step-title">Select Showtime</div>
+                <div class="md-step-optional"><img src="pic/cinema.png" alt=""></div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
                 <!-- </a> -->
             </div>
             <div class="md-step active">
                 <!-- <a href="seat.html"> -->
-                    <div class="md-step-circle"><span>2</span></div>
-                    <div class="md-step-title">Select Seats</div>
-                    <div class="md-step-optional"><img src="pic/seats.png" alt=""></div>
-                    <div class="md-step-bar-left"></div>
-                    <div class="md-step-bar-right"></div>
+                <div class="md-step-circle"><span>2</span></div>
+                <div class="md-step-title">Select Seats</div>
+                <div class="md-step-optional"><img src="pic/seats.png" alt=""></div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
                 <!-- </a> -->
             </div>
             <div class="md-step active">
@@ -172,8 +172,29 @@
         </div>
         <!-- step bar end-->
         <div class="container">
-            <div class="row">
-                
+            <div class="row" style="margin-left: 9em; margin-top: 3em;">
+
+                <widget type="ticket">
+                    <div class="top">
+                        <br>
+                        <div class="moviename"><b>{{movies[0].name.en}} {{time_select}}</b></div>
+                        <div class="cineplexname">{{findcineplexName}}</div>
+                        <div class="detail">
+                            <div class="seat">
+                                <div class="location -bold">{{seat_select}}</div>
+                            </div>
+                            <div class="price">
+                                <div class="label">Price {{user.price}}</div>
+                            </div>
+                            <center><small>myMoon Cinema</small></center>
+                        </div>
+                        <div class="rip"></div>
+                        <div class="bottom">
+                            <div class="barcode"></div>
+                            <br>
+                        </div>
+                        <br>
+                </widget>
             </div>
         </div>
     </div>
