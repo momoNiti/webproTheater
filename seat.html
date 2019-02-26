@@ -213,7 +213,7 @@
                 <template v-else>
                     <div class="next-step">
                         <div class="form-payment">
-                            <form>
+                            <form action="myTicket.html" method="GET">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputName">Name</label>
@@ -328,16 +328,14 @@
                                             v-model="user.price">
                                     </div>
                                 </div>
-                                <a href="payment.html"> <button type="submit"
-                                        class="btn btn-danger btn-lg">NEXT</button></a>
+                                <button type="submit"
+                                        class="btn btn-danger btn-lg">NEXT</button>
                             </form>
                         </div>
 
                     </div>
                 </template>
             </div>
-
-            <!-- next step -->
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
