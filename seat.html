@@ -168,9 +168,11 @@
                     <table>
                         <template v-for="number in row.seat_no">
                             <td v-if="Number(number) <= 9">
-                                {{row.id}}{{number}}
-                                <input type='checkbox' :id="row.id + number" :value='row.id + number'
-                                    v-model="seat_select" @click="seatSelected($event);" @change="calculatePrice()" />
+                                <!-- {{row.id}}{{number}} -->
+                                <input type='checkbox' class="seat_checkbox" :id="row.id + number"
+                                    :value='row.id + number' v-model="seat_select" @click="seatSelected($event);"
+                                    @change="calculatePrice()" />
+                                <label :for="row.id+number">{{row.id}}{{number}}</label>
                             </td>
                         </template>
                     </table>
@@ -180,9 +182,11 @@
                     <table>
                         <template v-for="number in row.seat_no">
                             <td v-if="Number(number) > 9">
-                                {{row.id}}{{number}}
-                                <input type='checkbox' :id="row.id + number" :value="row.id + number"
-                                    v-model="seat_select" @click="seatSelected($event);" @change="calculatePrice()" />
+
+                                <input type='checkbox' class="seat_checkbox" :id="row.id + number"
+                                    :value="row.id + number" v-model="seat_select" @click="seatSelected($event);"
+                                    @change="calculatePrice()" />
+                                <label :for="row.id+number">{{row.id}}{{number}}</label>
                             </td>
                         </template>
                     </table>
