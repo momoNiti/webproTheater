@@ -23,117 +23,124 @@
 
 <body>
     <div id="app">
-                <!--Modal: Login / Register Form-->
-                <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header text-center">
-                            <h4 class="modal-title w-100 font-weight-bold" style="color:#212529;">Login</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body mx-5">
+        <!--Modal: Login / Register Form-->
+        <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold" style="color:#212529;">Login</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-5">
+                        <form action="">
                             <div class="md-form mb-2">
-                                <input type="email" id="defaultForm-email" class="form-control validate">
-                                <label data-error="wrong" data-success="right" for="defaultForm-email"
+                                <input required type="email" id="defaultForm-email-login" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-email-login"
                                     style="color:rgba(83, 82, 82, 0.514)">Your email</label>
                             </div>
                             <div class="md-form mb-2">
-                                <input type="password" id="defaultForm-pass" class="form-control validate">
-                                <label data-error="wrong" data-success="right" for="defaultForm-pass"
+                                <input required type="password" id="defaultForm-pass-login"
+                                    class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-pass-login"
                                     style="color:rgba(83, 82, 82, 0.514)">Your password</label>
                             </div>
-                        </div>
-    
-                        <button class="btn btn-default bg-primary text-light">Login</button>
+                            <button type="submit" class="btn btn-default bg-primary text-light">Login</button>
+                        </form>
                     </div>
+
                 </div>
             </div>
-            <div class="modal fade" id="modalSignForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header text-center">
-                            <h4 class="modal-title w-100 font-weight-bold" style="color:#212529;">Sign in</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body mx-5">
-                                <div class="md-form mb-2">
-                                    <h2 style="text-align: center;">Create Account</h2>
-                                    <input type="text" id="defaultForm-text" class="form-control validate">
-                                    <label data-error="wrong" data-success="right" for="defaultForm-text"
-                                        style="color:rgba(83, 82, 82, 0.514)">Your name</label>
-                                </div>
-                                <div class="md-form mb-2">
-                                    <input type="text" id="defaultForm-text" class="form-control validate">
-                                    <label data-error="wrong" data-success="right" for="defaultForm-text"
-                                        style="color:rgba(83, 82, 82, 0.514)">Usrename</label>
-                                </div>
-                                <div class="md-form mb-2">
-                                    <input type="email" id="defaultForm-email" class="form-control validate">
-                                    <label data-error="wrong" data-success="right" for="defaultForm-email"
-                                        style="color:rgba(83, 82, 82, 0.514)">Email</label>
-                                </div>
-                                <div class="md-form mb-2">
-                                    <input type="password" id="defaultForm-pass" class="form-control validate">
-                                    <label data-error="wrong" data-success="right" for="defaultForm-pass"
-                                        style="color:rgba(83, 82, 82, 0.514)">Password</label>
-                                </div>
+        </div>
+        <div class="modal fade" id="modalSignForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold" style="color:#212529;">SignUp</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-5">
+                        <form action="">
+                            <div class="md-form mb-2">
+                                <h2 style="text-align: center;">Create Account</h2>
+                                <input required type="text" id="defaultForm-real-name" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-real-name"
+                                    style="color:rgba(83, 82, 82, 0.514)">Your name</label>
                             </div>
-    
-                        <button class="btn btn-default bg-primary text-light">Sign in</button>
+                            <div class="md-form mb-2">
+                                <input required type="text" id="defaultForm-username" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-username"
+                                    style="color:rgba(83, 82, 82, 0.514)">Usrename</label>
+                            </div>
+                            <div class="md-form mb-2">
+                                <input required type="email" id="defaultForm-email" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-email"
+                                    style="color:rgba(83, 82, 82, 0.514)">Email</label>
+                            </div>
+                            <div class="md-form mb-2">
+                                <input required type="password" id="defaultForm-pass" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-pass"
+                                    style="color:rgba(83, 82, 82, 0.514)">Password</label>
+                            </div>
+                            <button type="submit" class="btn btn-default bg-primary text-light"
+                                style="widows: 100%;">SignUp</button>
+                        </form>
                     </div>
+
+
                 </div>
             </div>
-            <!--Modal: Login / Register Form-->
-            <!-- nav start -->
-            <div class="header"></div>
-            <nav class="nav sticky-top navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="index.html"><img src="pic/logo.png" alt="" width="150px"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
-                <div class=" collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto ">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#moviezone">Movie <span class="sr-only">(current)</span></a>
-                        </li>
-                    </ul>
-    
-                    <form class=" search form-inline  mr-4">
-                        <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search"
-                            v-model="searchText">
-                    </form>
-                    <ul class="navbar-nav mr-10">
-                        <li class="nav-item log">
-                            <a href="#" data-toggle="modal" data-target="#modalLoginForm">
-                                <img src="pic/login-password.png">
-                                <img src="pic/login-passwordh.png" class="img-top" alt="Card Front">
-                                <p>Login</p>
-                            </a>
-                        </li>
-    
-                        <li class="nav-item user">
-                            <a href="#" data-toggle="modal" data-target="#modalSignForm">
-                                <img src="pic/avatar.png">
-                                <img src="pic/userh.png" class="img-top" alt="Card Front">
-                                <p>SignUp</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- <mynavbar></mynavbar> -->
-            <!-- nav end -->
+        </div>
+        <!--Modal: Login / Register Form-->
+        <!-- nav start -->
+        <div class="header"></div>
+        <nav class="nav sticky-top navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="index.html"><img src="pic/logo.png" alt="" width="150px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class=" collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#moviezone">Movie <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+
+                <form class=" search form-inline  mr-4">
+                    <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search"
+                        v-model="searchText">
+                </form>
+                <ul class="navbar-nav mr-10">
+                    <li class="nav-item log">
+                        <a href="#" data-toggle="modal" data-target="#modalLoginForm">
+                            <img src="pic/login-password.png">
+                            <img src="pic/login-passwordh.png" class="img-top" alt="Card Front">
+                            <p>Login</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item user">
+                        <a href="#" data-toggle="modal" data-target="#modalSignForm">
+                            <img src="pic/avatar.png">
+                            <img src="pic/userh.png" class="img-top" alt="Card Front">
+                            <p>SignUp</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- <mynavbar></mynavbar> -->
+        <!-- nav end -->
         <div class="space05"></div>
         <!-- Trailer start -->
         <div class="video">

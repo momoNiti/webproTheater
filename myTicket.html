@@ -36,19 +36,22 @@
                         </button>
                     </div>
                     <div class="modal-body mx-5">
-                        <div class="md-form mb-2">
-                            <input type="email" id="defaultForm-email" class="form-control validate">
-                            <label data-error="wrong" data-success="right" for="defaultForm-email"
-                                style="color:rgba(83, 82, 82, 0.514)">Your email</label>
-                        </div>
-                        <div class="md-form mb-2">
-                            <input type="password" id="defaultForm-pass" class="form-control validate">
-                            <label data-error="wrong" data-success="right" for="defaultForm-pass"
-                                style="color:rgba(83, 82, 82, 0.514)">Your password</label>
-                        </div>
+                        <form action="">
+                            <div class="md-form mb-2">
+                                <input required type="email" id="defaultForm-email-login" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-email-login"
+                                    style="color:rgba(83, 82, 82, 0.514)">Your email</label>
+                            </div>
+                            <div class="md-form mb-2">
+                                <input required type="password" id="defaultForm-pass-login"
+                                    class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-pass-login"
+                                    style="color:rgba(83, 82, 82, 0.514)">Your password</label>
+                            </div>
+                            <button type="submit" class="btn btn-default bg-primary text-light">Login</button>
+                        </form>
                     </div>
 
-                    <button class="btn btn-default bg-primary text-light">Login</button>
                 </div>
             </div>
         </div>
@@ -57,36 +60,40 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header text-center">
-                        <h4 class="modal-title w-100 font-weight-bold" style="color:#212529;">Sign in</h4>
+                        <h4 class="modal-title w-100 font-weight-bold" style="color:#212529;">SignUp</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body mx-5">
-                        <div class="md-form mb-2">
-                            <h2 style="text-align: center;">Create Account</h2>
-                            <input type="text" id="defaultForm-text" class="form-control validate">
-                            <label data-error="wrong" data-success="right" for="defaultForm-text"
-                                style="color:rgba(83, 82, 82, 0.514)">Your name</label>
-                        </div>
-                        <div class="md-form mb-2">
-                            <input type="text" id="defaultForm-text" class="form-control validate">
-                            <label data-error="wrong" data-success="right" for="defaultForm-text"
-                                style="color:rgba(83, 82, 82, 0.514)">Usrename</label>
-                        </div>
-                        <div class="md-form mb-2">
-                            <input type="email" id="defaultForm-email" class="form-control validate">
-                            <label data-error="wrong" data-success="right" for="defaultForm-email"
-                                style="color:rgba(83, 82, 82, 0.514)">Email</label>
-                        </div>
-                        <div class="md-form mb-2">
-                            <input type="password" id="defaultForm-pass" class="form-control validate">
-                            <label data-error="wrong" data-success="right" for="defaultForm-pass"
-                                style="color:rgba(83, 82, 82, 0.514)">Password</label>
-                        </div>
+                        <form action="">
+                            <div class="md-form mb-2">
+                                <h2 style="text-align: center;">Create Account</h2>
+                                <input required type="text" id="defaultForm-real-name" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-real-name"
+                                    style="color:rgba(83, 82, 82, 0.514)">Your name</label>
+                            </div>
+                            <div class="md-form mb-2">
+                                <input required type="text" id="defaultForm-username" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-username"
+                                    style="color:rgba(83, 82, 82, 0.514)">Usrename</label>
+                            </div>
+                            <div class="md-form mb-2">
+                                <input required type="email" id="defaultForm-email" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-email"
+                                    style="color:rgba(83, 82, 82, 0.514)">Email</label>
+                            </div>
+                            <div class="md-form mb-2">
+                                <input required type="password" id="defaultForm-pass" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-pass"
+                                    style="color:rgba(83, 82, 82, 0.514)">Password</label>
+                            </div>
+                            <button type="submit" class="btn btn-default bg-primary text-light"
+                                style="widows: 100%;">SignUp</button>
+                        </form>
                     </div>
 
-                    <button class="btn btn-default bg-primary text-light">Sign in</button>
+
                 </div>
             </div>
         </div>
@@ -165,7 +172,7 @@
         </div>
         <!-- step bar end-->
         <div class="container">
-            
+
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

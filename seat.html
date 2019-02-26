@@ -36,19 +36,22 @@
                         </button>
                     </div>
                     <div class="modal-body mx-5">
-                        <div class="md-form mb-2">
-                            <input type="email" id="defaultForm-email" class="form-control validate">
-                            <label data-error="wrong" data-success="right" for="defaultForm-email"
-                                style="color:rgba(83, 82, 82, 0.514)">Your email</label>
-                        </div>
-                        <div class="md-form mb-2">
-                            <input type="password" id="defaultForm-pass" class="form-control validate">
-                            <label data-error="wrong" data-success="right" for="defaultForm-pass"
-                                style="color:rgba(83, 82, 82, 0.514)">Your password</label>
-                        </div>
+                        <form action="">
+                            <div class="md-form mb-2">
+                                <input required type="email" id="defaultForm-email-login" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-email-login"
+                                    style="color:rgba(83, 82, 82, 0.514)">Your email</label>
+                            </div>
+                            <div class="md-form mb-2">
+                                <input required type="password" id="defaultForm-pass-login"
+                                    class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-pass-login"
+                                    style="color:rgba(83, 82, 82, 0.514)">Your password</label>
+                            </div>
+                            <button type="submit" class="btn btn-default bg-primary text-light">Login</button>
+                        </form>
                     </div>
 
-                    <button class="btn btn-default bg-primary text-light">Login</button>
                 </div>
             </div>
         </div>
@@ -57,36 +60,40 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header text-center">
-                        <h4 class="modal-title w-100 font-weight-bold" style="color:#212529;">Sign in</h4>
+                        <h4 class="modal-title w-100 font-weight-bold" style="color:#212529;">SignUp</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body mx-5">
+                        <form action="">
                             <div class="md-form mb-2">
                                 <h2 style="text-align: center;">Create Account</h2>
-                                <input type="text" id="defaultForm-text" class="form-control validate">
-                                <label data-error="wrong" data-success="right" for="defaultForm-text"
+                                <input required type="text" id="defaultForm-real-name" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-real-name"
                                     style="color:rgba(83, 82, 82, 0.514)">Your name</label>
                             </div>
                             <div class="md-form mb-2">
-                                <input type="text" id="defaultForm-text" class="form-control validate">
-                                <label data-error="wrong" data-success="right" for="defaultForm-text"
+                                <input required type="text" id="defaultForm-username" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="defaultForm-username"
                                     style="color:rgba(83, 82, 82, 0.514)">Usrename</label>
                             </div>
                             <div class="md-form mb-2">
-                                <input type="email" id="defaultForm-email" class="form-control validate">
+                                <input required type="email" id="defaultForm-email" class="form-control validate">
                                 <label data-error="wrong" data-success="right" for="defaultForm-email"
                                     style="color:rgba(83, 82, 82, 0.514)">Email</label>
                             </div>
                             <div class="md-form mb-2">
-                                <input type="password" id="defaultForm-pass" class="form-control validate">
+                                <input required type="password" id="defaultForm-pass" class="form-control validate">
                                 <label data-error="wrong" data-success="right" for="defaultForm-pass"
                                     style="color:rgba(83, 82, 82, 0.514)">Password</label>
                             </div>
-                        </div>
+                            <button type="submit" class="btn btn-default bg-primary text-light"
+                                style="widows: 100%;">SignUp</button>
+                        </form>
+                    </div>
 
-                    <button class="btn btn-default bg-primary text-light">Sign in</button>
+
                 </div>
             </div>
         </div>
@@ -217,8 +224,8 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputName">Name</label>
-                                        <input required type="text" class="form-control" id="inputName" placeholder="Name"
-                                            v-model="user.name">
+                                        <input required type="text" class="form-control" id="inputName"
+                                            placeholder="Name" v-model="user.name">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputSurname">Surname</label>
@@ -229,8 +236,8 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Email</label>
-                                        <input required type="email" class="form-control" id="inputEmail4" placeholder="Email"
-                                            v-model="user.email">
+                                        <input required type="email" class="form-control" id="inputEmail4"
+                                            placeholder="Email" v-model="user.email">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -290,7 +297,8 @@
                                     <template v-if="user.paymentType === 'cash'">
                                         <div class="form-group">
                                             <br><br>
-                                            <label>กรุณานำรหัสการสั่งซื้อ ชำระที่หน้าเคาน์เตอร์ <h2 style="color:burlywood">M26T8</h2></label>
+                                            <label>กรุณานำรหัสการสั่งซื้อ ชำระที่หน้าเคาน์เตอร์ <h2
+                                                    style="color:burlywood">M26T8</h2></label>
                                         </div>
                                     </template>
                                     <template v-if="user.paymentType === 'creditCard'">
@@ -299,14 +307,14 @@
                                             <input required type="text" class="form-control" id="inputCredit"
                                                 placeholder="xxxx xxxx xxxx" v-model="user.creditNumber">
                                             <label for="namecard">Name</label>
-                                            <input  required type="text" class="form-control" id="namecard"
-                                                placeholder="Card Holder" >
+                                            <input required type="text" class="form-control" id="namecard"
+                                                placeholder="Card Holder">
                                             <label for="ccv">CCV/CVV</label>
-                                            <input  required type="password" class="form-control" id="ccv"
-                                                placeholder="xxx" >
+                                            <input required type="password" class="form-control" id="ccv"
+                                                placeholder="xxx">
                                             <label for="exp">Expires</label>
-                                            <input  required type="text" class="form-control" id="exp"
-                                                placeholder="MM/YY" >
+                                            <input required type="text" class="form-control" id="exp"
+                                                placeholder="MM/YY">
                                         </div>
                                     </template>
                                     <template v-if="user.paymentType === 'promptPay'">
@@ -328,8 +336,7 @@
                                             v-model="user.price">
                                     </div>
                                 </div>
-                                <button type="submit"
-                                        class="btn btn-danger btn-lg">NEXT</button>
+                                <button type="submit" class="btn btn-danger btn-lg">NEXT</button>
                             </form>
                         </div>
 
