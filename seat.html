@@ -290,22 +290,22 @@
                                     <template v-if="user.paymentType === 'cash'">
                                         <div class="form-group">
                                             <br><br>
-                                            <label>กรุณานำรหัสการสั่งซื้อ ชำระที่หน้าเคาน์เตอร์</label>
+                                            <label>กรุณานำรหัสการสั่งซื้อ ชำระที่หน้าเคาน์เตอร์ <h2 style="color:burlywood">M26T8</h2></label>
                                         </div>
                                     </template>
                                     <template v-if="user.paymentType === 'creditCard'">
                                         <div class="form-group">
                                             <label for="inputCredit">Credit Card</label>
-                                            <input type="text" class="form-control" id="inputCredit"
+                                            <input required type="text" class="form-control" id="inputCredit"
                                                 placeholder="xxxx xxxx xxxx" v-model="user.creditNumber">
                                             <label for="namecard">Name</label>
-                                            <input type="text" class="form-control" id="namecard"
+                                            <input  required type="text" class="form-control" id="namecard"
                                                 placeholder="Card Holder" >
                                             <label for="ccv">CCV/CVV</label>
-                                            <input type="password" class="form-control" id="ccv"
+                                            <input  required type="password" class="form-control" id="ccv"
                                                 placeholder="xxx" >
                                             <label for="exp">Expires</label>
-                                            <input type="text" class="form-control" id="exp"
+                                            <input  required type="text" class="form-control" id="exp"
                                                 placeholder="MM/YY" >
                                         </div>
                                     </template>
