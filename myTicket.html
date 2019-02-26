@@ -174,30 +174,39 @@
         <template>
             <div class="container">
                 <div class="row" style="margin-left: 9em; margin-top: 3em;">
-                    <div class="ticket">
-                        <div class="top">
-                            <br>
-                            <div class="moviename"><b>{{movies[0].name.en}} {{time_select}}</b></div>
-                            <div class="cineplexname">{{findcineplexName}}</div>
-                            <div class="detail">
-                                <div class="seat">
-                                    <div class="location -bold">{{seat_select}}</div>
+                    <template v-if="user.paymentType !== 'cash'">
+                        <div class="ticket">
+                            <div class="top">
+                                <br>
+                                <div class="moviename"><b>{{movies[0].name.en}} {{time_select}}</b></div>
+                                <div class="cineplexname">{{findcineplexName}}</div>
+                                <div class="detail">
+                                    <div class="seat">
+                                        <div class="location -bold">{{seat_select}}</div>
+                                    </div>
+                                    <div class="price">
+                                        <div class="label">Price {{user.price}}</div>
+                                    </div>
+                                    <center><small>myMoon Cinema</small></center>
                                 </div>
-                                <div class="price">
-                                    <div class="label">Price {{user.price}}</div>
+                                <div class="rip"></div>
+                                <div class="bottom">
+                                    <div class="barcode"></div>
+                                    <center><small>กรุณาแสดง QR CODE ก่อนเข้าชมภาพยนตร์</small></center>
+                                    <br>
                                 </div>
-                                <center><small>myMoon Cinema</small></center>
-                            </div>
-                            <div class="rip"></div>
-                            <div class="bottom">
-                                <div class="barcode"></div>
-                                <center><small>กรุณาแสดง QR CODE ก่อนเข้าชมภาพยนตร์</small></center>
                                 <br>
                             </div>
-                            <br>
-                    </div>
+                        </div>
+                    </template>
+
+                    <template v-else>
+                        <div class="ticket">
+                                <label>กรุณานำรหัสการสั่งซื้อ ชำระที่หน้าเคาน์เตอร์ <h2
+                                    style="color:burlywood">M26T8</h2></label>
+                        </div>
+                    </template>
                 </div>
-            </div>
         </template>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
