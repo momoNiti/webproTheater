@@ -19,110 +19,111 @@
         crossorigin="anonymous"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script>
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 </head>
 
 <body>
     <div id="app">
-               <!--Modal: Login / Register Form-->
-               <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-               aria-hidden="true">
-               <div class="modal-dialog" role="document">
-                   <div class="modal-content">
-                       <div class="modal-header text-center">
-                           <h4 class="modal-title w-100 font-weight-bold" style="color:#212529;">Login</h4>
-                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                               <span aria-hidden="true">&times;</span>
-                           </button>
-                       </div>
-                       <div class="modal-body mx-5">
-                           <div class="md-form mb-2">
-                               <input type="email" id="defaultForm-email" class="form-control validate">
-                               <label data-error="wrong" data-success="right" for="defaultForm-email"
-                                   style="color:rgba(83, 82, 82, 0.514)">Your email</label>
-                           </div>
-                           <div class="md-form mb-2">
-                               <input type="password" id="defaultForm-pass" class="form-control validate">
-                               <label data-error="wrong" data-success="right" for="defaultForm-pass"
-                                   style="color:rgba(83, 82, 82, 0.514)">Your password</label>
-                           </div>
-                       </div>
-   
-                       <button class="btn btn-default bg-primary text-light">Login</button>
-                   </div>
-               </div>
-           </div>
-           <div class="modal fade" id="modalSignForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-               aria-hidden="true">
-               <div class="modal-dialog" role="document">
-                   <div class="modal-content">
-                       <div class="modal-header text-center">
-                           <h4 class="modal-title w-100 font-weight-bold" style="color:#212529;">Sign in</h4>
-                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                               <span aria-hidden="true">&times;</span>
-                           </button>
-                       </div>
-                       <div class="modal-body mx-5">
-                           <div class="md-form mb-2">
-                               <input type="email" id="defaultForm-email" class="form-control validate">
-                               <label data-error="wrong" data-success="right" for="defaultForm-email"
-                                   style="color:rgba(83, 82, 82, 0.514)">Your email</label>
-                           </div>
-                           <div class="md-form mb-2">
-                               <input type="password" id="defaultForm-pass" class="form-control validate">
-                               <label data-error="wrong" data-success="right" for="defaultForm-pass"
-                                   style="color:rgba(83, 82, 82, 0.514)">Your password</label>
-                           </div>
-                       </div>
-   
-                       <button class="btn btn-default bg-primary text-light">Sign in</button>
-                   </div>
-               </div>
-           </div>
-           <!--Modal: Login / Register Form-->
-           <!-- nav start -->
-           <div class="header"></div>
-           <nav class="nav sticky-top navbar navbar-expand-lg navbar-light">
-               <a class="navbar-brand" href="index.html"><img src="pic/logo.png" alt="" width="150px"></a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                   <span class="navbar-toggler-icon"></span>
-               </button>
-   
-               <div class=" collapse navbar-collapse" id="navbarSupportedContent">
-                   <ul class="navbar-nav mr-auto ">
-                       <li class="nav-item">
-                           <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="index.html#moviezone">Movie <span class="sr-only">(current)</span></a>
-                       </li>
-                   </ul>
-   
-                   <form class=" search form-inline  mr-4">
-                       <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search"
-                           v-model="searchText">
-                   </form>
-                   <ul class="navbar-nav mr-10">
-                       <li class="nav-item log">
-                           <a href="#" data-toggle="modal" data-target="#modalLoginForm">
-                               <img src="pic/login-password.png">
-                               <img src="pic/login-passwordh.png" class="img-top" alt="Card Front">
-                               <p>Login</p>
-                           </a>
-                       </li>
-   
-                       <li class="nav-item user">
-                           <a href="#" data-toggle="modal" data-target="#modalSignForm">
-                               <img src="pic/avatar.png">
-                               <img src="pic/userh.png" class="img-top" alt="Card Front">
-                               <p>SignUp</p>
-                           </a>
-                       </li>
-                   </ul>
-               </div>
-           </nav>
-           <!-- <mynavbar></mynavbar> -->
-           <!-- nav end -->
+        <!--Modal: Login / Register Form-->
+        <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold" style="color:#212529;">Login</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-5">
+                        <div class="md-form mb-2">
+                            <input type="email" id="defaultForm-email" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="defaultForm-email"
+                                style="color:rgba(83, 82, 82, 0.514)">Your email</label>
+                        </div>
+                        <div class="md-form mb-2">
+                            <input type="password" id="defaultForm-pass" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="defaultForm-pass"
+                                style="color:rgba(83, 82, 82, 0.514)">Your password</label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-default bg-primary text-light">Login</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalSignForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold" style="color:#212529;">Sign in</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-5">
+                        <div class="md-form mb-2">
+                            <input type="email" id="defaultForm-email" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="defaultForm-email"
+                                style="color:rgba(83, 82, 82, 0.514)">Your email</label>
+                        </div>
+                        <div class="md-form mb-2">
+                            <input type="password" id="defaultForm-pass" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="defaultForm-pass"
+                                style="color:rgba(83, 82, 82, 0.514)">Your password</label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-default bg-primary text-light">Sign in</button>
+                </div>
+            </div>
+        </div>
+        <!--Modal: Login / Register Form-->
+        <!-- nav start -->
+        <div class="header"></div>
+        <nav class="nav sticky-top navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="index.html"><img src="pic/logo.png" alt="" width="150px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class=" collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#moviezone">Movie <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+
+                <form class=" search form-inline  mr-4">
+                    <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search"
+                        v-model="searchText">
+                </form>
+                <ul class="navbar-nav mr-10">
+                    <li class="nav-item log">
+                        <a href="#" data-toggle="modal" data-target="#modalLoginForm">
+                            <img src="pic/login-password.png">
+                            <img src="pic/login-passwordh.png" class="img-top" alt="Card Front">
+                            <p>Login</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item user">
+                        <a href="#" data-toggle="modal" data-target="#modalSignForm">
+                            <img src="pic/avatar.png">
+                            <img src="pic/userh.png" class="img-top" alt="Card Front">
+                            <p>SignUp</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- <mynavbar></mynavbar> -->
+        <!-- nav end -->
         <!-- step bar start-->
         <div class="md-stepper-horizontal orange">
             <div class="md-step active">
@@ -225,7 +226,8 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-5">
                                         <label for="userType">User Type</label>
-                                        <select required id="userType" class="form-control" v-model="user.userType" @change="calculatePrice()">
+                                        <select required id="userType" class="form-control" v-model="user.userType"
+                                            @change="calculatePrice()">
                                             <option selected disabled>Please Select</option>
                                             <option value="child">Child</option>
                                             <option value="adult">Adult</option>
@@ -254,7 +256,7 @@
                                     <template v-if="user.userType === 'adult'">
                                         <div class="form-group">
                                             <label for="inputadultNumber">Adult</label>
-                                            <input type="number" disabled  class="form-control" id="inputadultNumber"
+                                            <input type="number" disabled class="form-control" id="inputadultNumber"
                                                 placeholder="0" v-model="calculateType">
                                         </div>
                                     </template>
@@ -270,18 +272,37 @@
                                             <option value="promptPay">promptPay</option>
                                         </select>
                                     </div>
+                                    <template v-if="user.paymentType === 'cash'">
+                                        <div class="form-group">
+                                            <br><br>
+                                            <label>กรุณานำรหัสการสั่งซื้อ ชำระที่หน้าเคาน์เตอร์</label>
+                                        </div>
+                                    </template>
                                     <template v-if="user.paymentType === 'creditCard'">
                                         <div class="form-group">
                                             <label for="inputCredit">Credit Card</label>
                                             <input type="text" class="form-control" id="inputCredit"
                                                 placeholder="xxxx xxxx xxxx" v-model="user.creditNumber">
+                                            <label for="namecard">Name</label>
+                                            <input type="text" class="form-control" id="namecard"
+                                                placeholder="Card Holder" >
+                                            <label for="ccv">CCV/CVV</label>
+                                            <input type="password" class="form-control" id="ccv"
+                                                placeholder="xxx" >
+                                            <label for="exp">Expires</label>
+                                            <input type="text" class="form-control" id="exp"
+                                                placeholder="MM/YY" >
                                         </div>
                                     </template>
                                     <template v-if="user.paymentType === 'promptPay'">
                                         <div class="form-group">
-                                            <label for="inputphoneNumber">Phone Number</label>
-                                            <input type="text" class="form-control" id="inputphoneNumber"
-                                                placeholder="+66 ....." v-model="user.phoneNumber">
+                                            <!-- <label for="inputphoneNumber">Phone Number</label> -->
+                                            <!-- <input type="text" class="form-control" id="inputphoneNumber"
+                                                placeholder="+66 ....." v-model="user.phoneNumber"> -->
+                                            <br>
+                                            <img src="pic/promptpay-png-1.png" alt=""
+                                                style="background: rgb(255, 255, 255);">
+                                            <label>โปรดscan QR-CODE</label>
                                         </div>
                                     </template>
                                 </div>
